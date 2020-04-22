@@ -11,7 +11,8 @@ const resultPara = document.querySelector('.result');
 btn.addEventListener('click', async() => {
     try {
         await navigator.share(shareData)
-        resultPara.textContent = 'MDN shared successfully'
+        alert("Success...");
+        //resultPara.textContent = 'MDN shared successfully'
     } catch (err) {
         resultPara.textContent = 'Error: ' + err
     }
