@@ -1,19 +1,10 @@
-const shareData = {
-    title: 'MDN',
-    text: 'Learn web development on MDN!',
-    url: 'https://developer.mozilla.org',
-}
+shareButton = document.getElementById("shareButton");
 
-btn = document.getElementById('shareButton');
-const resultPara = document.querySelector('.result');
-
-// Must be triggered some kind of "user activation"
-btn.addEventListener('click', () => {
-    navigator.share(shareData)
-        .then(() =>
-            resultPara.textContent = 'MDN shared successfully'
-        )
-        .catch((e) =>
-            resultPara.textContent = 'Error: ' + e
-        )
+shareButton.addEventListener("click", async() => {
+    try {
+        await navigator.share({ title: "Example Page", url: "" });
+        console.log("Data was shared successfully");
+    } catch (err) {
+        console.error("Share failed:", err.message);
+    }
 });
