@@ -4,7 +4,7 @@ const shareData = {
     url: 'https://developer.mozilla.org',
 }
 
-const btn = document.getElementById('shareButton');
+btn = document.getElementById('shareButton');
 const resultPara = document.querySelector('.result');
 
 // Must be triggered some kind of "user activation"
